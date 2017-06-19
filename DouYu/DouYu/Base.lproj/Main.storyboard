@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Main View Controller-->
         <scene sceneID="yia-3F-URl">
             <objects>
-                <tabBarController id="dSj-4x-ng2" sceneMemberID="viewController">
+                <tabBarController id="dSj-4x-ng2" customClass="MainViewController" customModule="DouYu" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="NtC-qA-WLf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
