@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="R8p-IU-26q">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="LhM-4J-WMe">
+            <objects>
+                <viewController id="IyA-6e-czi" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GAy-TN-np0"/>
+                        <viewControllerLayoutGuide type="bottom" id="Eco-3P-61W"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ecl-Tv-goW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gIO-Y8-yIO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G39-j0-w57" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-690" y="1442"/>
+        </scene>
+        <!--发现-->
+        <scene sceneID="qfk-fm-OwS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="R8p-IU-26q" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="发现" image="发现" selectedImage="发现选中" id="iiS-a4-e2s"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4_7.fullscreen"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kak-lu-mj2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="IyA-6e-czi" kind="relationship" relationship="rootViewController" id="uur-X0-iK1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PrI-q0-79w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-887" y="700"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="发现" width="24" height="24"/>
+        <image name="发现选中" width="24" height="24"/>
+    </resources>
+</document>

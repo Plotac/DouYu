@@ -11,6 +11,12 @@
 		56DBAE621EF7CFAA004F98DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56DBAE601EF7CFAA004F98DD /* Main.storyboard */; };
 		56DBAE641EF7CFAA004F98DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56DBAE631EF7CFAA004F98DD /* Assets.xcassets */; };
 		56DBAE671EF7CFAA004F98DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56DBAE651EF7CFAA004F98DD /* LaunchScreen.storyboard */; };
+		56DBAE781EF7D713004F98DD /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56DBAE761EF7D713004F98DD /* Home.storyboard */; };
+		56DBAE7A1EF7D723004F98DD /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56DBAE791EF7D723004F98DD /* Live.storyboard */; };
+		56DBAE7D1EF7D74B004F98DD /* Focus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56DBAE7B1EF7D74B004F98DD /* Focus.storyboard */; };
+		56DBAE7F1EF7D760004F98DD /* Found.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56DBAE7E1EF7D760004F98DD /* Found.storyboard */; };
+		56DBAE821EF7D76F004F98DD /* Mine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56DBAE801EF7D76F004F98DD /* Mine.storyboard */; };
+		56DBAE871EF7D853004F98DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DBAE861EF7D853004F98DD /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +26,12 @@
 		56DBAE631EF7CFAA004F98DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56DBAE661EF7CFAA004F98DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56DBAE681EF7CFAA004F98DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56DBAE771EF7D713004F98DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DouYu/Base.lproj/Home.storyboard; sourceTree = SOURCE_ROOT; };
+		56DBAE791EF7D723004F98DD /* Live.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Live.storyboard; path = ../Main/Live.storyboard; sourceTree = "<group>"; };
+		56DBAE7C1EF7D74B004F98DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DouYu/Base.lproj/Focus.storyboard; sourceTree = SOURCE_ROOT; };
+		56DBAE7E1EF7D760004F98DD /* Found.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Found.storyboard; path = ../Main/Found.storyboard; sourceTree = "<group>"; };
+		56DBAE811EF7D76F004F98DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DouYu/Base.lproj/Mine.storyboard; sourceTree = SOURCE_ROOT; };
+		56DBAE861EF7D853004F98DD /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +90,10 @@
 		56DBAE6F1EF7D1CA004F98DD /* Focus */ = {
 			isa = PBXGroup;
 			children = (
+				56DBAE7B1EF7D74B004F98DD /* Focus.storyboard */,
+				56DBAE8E1EF7D8CB004F98DD /* Controller */,
+				56DBAE8F1EF7D8CB004F98DD /* Model */,
+				56DBAE901EF7D8CB004F98DD /* View */,
 			);
 			path = Focus;
 			sourceTree = "<group>";
@@ -85,6 +101,10 @@
 		56DBAE701EF7D1CA004F98DD /* Found */ = {
 			isa = PBXGroup;
 			children = (
+				56DBAE7E1EF7D760004F98DD /* Found.storyboard */,
+				56DBAE941EF7D928004F98DD /* Controller */,
+				56DBAE951EF7D928004F98DD /* Model */,
+				56DBAE961EF7D928004F98DD /* View */,
 			);
 			path = Found;
 			sourceTree = "<group>";
@@ -92,6 +112,10 @@
 		56DBAE711EF7D1CA004F98DD /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				56DBAE761EF7D713004F98DD /* Home.storyboard */,
+				56DBAE881EF7D8BA004F98DD /* Controller */,
+				56DBAE891EF7D8BA004F98DD /* Model */,
+				56DBAE8A1EF7D8BA004F98DD /* View */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -99,6 +123,10 @@
 		56DBAE721EF7D1CA004F98DD /* Live */ = {
 			isa = PBXGroup;
 			children = (
+				56DBAE791EF7D723004F98DD /* Live.storyboard */,
+				56DBAE8B1EF7D8C2004F98DD /* Controller */,
+				56DBAE8C1EF7D8C2004F98DD /* Model */,
+				56DBAE8D1EF7D8C2004F98DD /* View */,
 			);
 			path = Live;
 			sourceTree = "<group>";
@@ -106,6 +134,10 @@
 		56DBAE731EF7D1CA004F98DD /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				56DBAE801EF7D76F004F98DD /* Mine.storyboard */,
+				56DBAE911EF7D8FD004F98DD /* Controller */,
+				56DBAE921EF7D8FD004F98DD /* Model */,
+				56DBAE931EF7D8FD004F98DD /* View */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -121,8 +153,138 @@
 			isa = PBXGroup;
 			children = (
 				56DBAE601EF7CFAA004F98DD /* Main.storyboard */,
+				56DBAE831EF7D842004F98DD /* Controller */,
+				56DBAE841EF7D842004F98DD /* Model */,
+				56DBAE851EF7D842004F98DD /* View */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		56DBAE831EF7D842004F98DD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				56DBAE861EF7D853004F98DD /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		56DBAE841EF7D842004F98DD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		56DBAE851EF7D842004F98DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		56DBAE881EF7D8BA004F98DD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		56DBAE891EF7D8BA004F98DD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		56DBAE8A1EF7D8BA004F98DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		56DBAE8B1EF7D8C2004F98DD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		56DBAE8C1EF7D8C2004F98DD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		56DBAE8D1EF7D8C2004F98DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		56DBAE8E1EF7D8CB004F98DD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		56DBAE8F1EF7D8CB004F98DD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		56DBAE901EF7D8CB004F98DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		56DBAE911EF7D8FD004F98DD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		56DBAE921EF7D8FD004F98DD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		56DBAE931EF7D8FD004F98DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		56DBAE941EF7D928004F98DD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		56DBAE951EF7D928004F98DD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		56DBAE961EF7D928004F98DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +349,11 @@
 				56DBAE671EF7CFAA004F98DD /* LaunchScreen.storyboard in Resources */,
 				56DBAE641EF7CFAA004F98DD /* Assets.xcassets in Resources */,
 				56DBAE621EF7CFAA004F98DD /* Main.storyboard in Resources */,
+				56DBAE7D1EF7D74B004F98DD /* Focus.storyboard in Resources */,
+				56DBAE7F1EF7D760004F98DD /* Found.storyboard in Resources */,
+				56DBAE7A1EF7D723004F98DD /* Live.storyboard in Resources */,
+				56DBAE781EF7D713004F98DD /* Home.storyboard in Resources */,
+				56DBAE821EF7D76F004F98DD /* Mine.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56DBAE5D1EF7CFAA004F98DD /* AppDelegate.swift in Sources */,
+				56DBAE871EF7D853004F98DD /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +387,33 @@
 				56DBAE661EF7CFAA004F98DD /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		56DBAE761EF7D713004F98DD /* Home.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				56DBAE771EF7D713004F98DD /* Base */,
+			);
+			name = Home.storyboard;
+			path = ../Main;
+			sourceTree = "<group>";
+		};
+		56DBAE7B1EF7D74B004F98DD /* Focus.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				56DBAE7C1EF7D74B004F98DD /* Base */,
+			);
+			name = Focus.storyboard;
+			path = ../Main;
+			sourceTree = "<group>";
+		};
+		56DBAE801EF7D76F004F98DD /* Mine.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				56DBAE811EF7D76F004F98DD /* Base */,
+			);
+			name = Mine.storyboard;
+			path = ../Main;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -321,7 +516,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = DouYu/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = plo.DouYu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -335,7 +530,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = DouYu/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = plo.DouYu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
