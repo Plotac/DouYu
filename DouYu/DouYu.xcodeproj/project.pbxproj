@@ -6,22 +6,8 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		56DBADA51EF7BD4B004F98DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DBADA41EF7BD4B004F98DD /* AppDelegate.swift */; };
-		56DBADA71EF7BD4B004F98DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DBADA61EF7BD4B004F98DD /* ViewController.swift */; };
-		56DBADAA1EF7BD4B004F98DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56DBADA81EF7BD4B004F98DD /* Main.storyboard */; };
-		56DBADAC1EF7BD4B004F98DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56DBADAB1EF7BD4B004F98DD /* Assets.xcassets */; };
-		56DBADAF1EF7BD4B004F98DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56DBADAD1EF7BD4B004F98DD /* LaunchScreen.storyboard */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
 		56DBADA11EF7BD4B004F98DD /* DouYu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouYu.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		56DBADA41EF7BD4B004F98DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		56DBADA61EF7BD4B004F98DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		56DBADA91EF7BD4B004F98DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		56DBADAB1EF7BD4B004F98DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		56DBADAE1EF7BD4B004F98DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		56DBADB01EF7BD4B004F98DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +24,6 @@
 		56DBAD981EF7BD4B004F98DD = {
 			isa = PBXGroup;
 			children = (
-				56DBADA31EF7BD4B004F98DD /* DouYu */,
 				56DBADA21EF7BD4B004F98DD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,19 +34,6 @@
 				56DBADA11EF7BD4B004F98DD /* DouYu.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		56DBADA31EF7BD4B004F98DD /* DouYu */ = {
-			isa = PBXGroup;
-			children = (
-				56DBADA41EF7BD4B004F98DD /* AppDelegate.swift */,
-				56DBADA61EF7BD4B004F98DD /* ViewController.swift */,
-				56DBADA81EF7BD4B004F98DD /* Main.storyboard */,
-				56DBADAB1EF7BD4B004F98DD /* Assets.xcassets */,
-				56DBADAD1EF7BD4B004F98DD /* LaunchScreen.storyboard */,
-				56DBADB01EF7BD4B004F98DD /* Info.plist */,
-			);
-			path = DouYu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,7 +68,7 @@
 				TargetAttributes = {
 					56DBADA01EF7BD4B004F98DD = {
 						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -123,9 +95,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56DBADAF1EF7BD4B004F98DD /* LaunchScreen.storyboard in Resources */,
-				56DBADAC1EF7BD4B004F98DD /* Assets.xcassets in Resources */,
-				56DBADAA1EF7BD4B004F98DD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,31 +105,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56DBADA71EF7BD4B004F98DD /* ViewController.swift in Sources */,
-				56DBADA51EF7BD4B004F98DD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		56DBADA81EF7BD4B004F98DD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				56DBADA91EF7BD4B004F98DD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		56DBADAD1EF7BD4B004F98DD /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				56DBADAE1EF7BD4B004F98DD /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		56DBADB11EF7BD4B004F98DD /* Debug */ = {
@@ -258,6 +206,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DouYu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = plo.DouYu;
@@ -270,6 +219,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DouYu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = plo.DouYu;
