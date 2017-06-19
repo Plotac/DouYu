@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  DouYu
 //
-//  Created by Plo on 2017/6/19.
+//  Created by Plo on 2017/6/9.
 //  Copyright © 2017年 Plo. All rights reserved.
 //
 
@@ -15,7 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        UITabBar.appearance().tintColor = UIColor.orange
+        
         return true
     }
 
