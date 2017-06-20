@@ -1,0 +1,14 @@
+platform:ios, '8.0'
+
+target ‘DouYu’ do
+project '/Users/plo/DouYu/DouYu/DouYu.xcodeproj'
+use_frameworks! 
+
+pod 'Alamofire', '~> 4.0'
+pod 'SnapKit', '~> 3.0.2'
+pod 'MBProgressHUD', '~> 1.0.0'
+pod 'SDCycleScrollView', '~> 1.66'
+pod 'SDWebImage', '~> 4.0.0'
+
+end
+
