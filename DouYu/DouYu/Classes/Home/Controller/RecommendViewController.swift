@@ -25,12 +25,12 @@ class RecommendViewController: UIViewController {
         flowLayout.minimumInteritemSpacing = kItemMargin
         flowLayout.scrollDirection = .horizontal
         
-        let coll = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
+        let coll = UICollectionView(frame: self.view.bounds, collectionViewLayout: flowLayout)
         coll.showsHorizontalScrollIndicator = false
         coll.bounces = false
         coll.dataSource = self
         coll.delegate = self
-        
+        coll.backgroundColor = UIColor.white
         coll.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kContentCellID)
         
         return coll
@@ -48,8 +48,7 @@ class RecommendViewController: UIViewController {
 extension RecommendViewController {
 
     fileprivate func setupUI() {
-    
-    
+        view.addSubview(collectionView)
     
     }
 }

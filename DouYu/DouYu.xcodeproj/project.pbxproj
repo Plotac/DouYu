@@ -24,6 +24,7 @@
 		56DBAEA11EF7D9ED004F98DD /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DBAE9F1EF7D9ED004F98DD /* PageContentView.swift */; };
 		56DBAEA41EF7D9FC004F98DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DBAEA21EF7D9FC004F98DD /* HomeViewController.swift */; };
 		56DBAEA51EF7D9FC004F98DD /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DBAEA31EF7D9FC004F98DD /* RecommendViewController.swift */; };
+		56DBAEA71EF8C5B3004F98DD /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DBAEA61EF8C5B3004F98DD /* LiveViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,8 @@
 		56DBAE9F1EF7D9ED004F98DD /* PageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
 		56DBAEA21EF7D9FC004F98DD /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		56DBAEA31EF7D9FC004F98DD /* RecommendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
+		56DBAEA61EF8C5B3004F98DD /* LiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
+		56DBAEA81EF8C60D004F98DD /* DouYu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DouYu-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				56DBAE971EF7D9A8004F98DD /* Common.swift */,
+				56DBAEA81EF8C60D004F98DD /* DouYu-Bridging-Header.h */,
 				56DBAE991EF7D9D5004F98DD /* Extension */,
 			);
 			path = Tools;
@@ -226,6 +230,7 @@
 		56DBAE8B1EF7D8C2004F98DD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				56DBAEA61EF8C5B3004F98DD /* LiveViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -397,6 +402,7 @@
 				56DBAE9C1EF7D9E2004F98DD /* UIBarButtonItem+Extension.swift in Sources */,
 				56DBAEA51EF7D9FC004F98DD /* RecommendViewController.swift in Sources */,
 				56DBAE5D1EF7CFAA004F98DD /* AppDelegate.swift in Sources */,
+				56DBAEA71EF8C5B3004F98DD /* LiveViewController.swift in Sources */,
 				56DBAEA41EF7D9FC004F98DD /* HomeViewController.swift in Sources */,
 				56DBAEA11EF7D9ED004F98DD /* PageContentView.swift in Sources */,
 				56DBAE981EF7D9A8004F98DD /* Common.swift in Sources */,
@@ -556,6 +562,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = plo.DouYu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/plo/DouYu/DouYu/DouYu/Classes/Tools/DouYu-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -570,6 +577,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = plo.DouYu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/plo/DouYu/DouYu/DouYu/Classes/Tools/DouYu-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
