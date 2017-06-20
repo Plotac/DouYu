@@ -18,7 +18,7 @@ fileprivate let kContentCellID : String = "CollectionCell"
 // Mark : - 系统回调函数
 class RecommendViewController: UIViewController {
 
-    fileprivate lazy var collectionView : UICollectionView = { [ weak self ] in
+    fileprivate lazy var collectionView : UICollectionView = { [ unowned self ] in
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = CGSize(width: kItemW, height: kItemH)
         flowLayout.minimumLineSpacing = 0

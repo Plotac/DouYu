@@ -124,21 +124,18 @@ extension PageTitleView {
 extension PageTitleView {
 
     @objc fileprivate func labelClick(tap : UITapGestureRecognizer) {
+        
+        
         //1.拿到点击之后的当前label
         guard let currentLabel = tap.view as? UILabel else { return }
+        
+        if currentIndex == currentLabel.tag { return }
+        
         currentLabel.textColor = UIColor(r: kSelectColor.0, g: kSelectColor.1, b: kSelectColor.2)
         
         //2.点击之前的旧label
         let oldLabel = titleLabels[currentIndex]
-        
-        if currentIndex == currentLabel.tag {
-            currentLabel.textColor = UIColor(r: kSelectColor.0, g: kSelectColor.1, b: kSelectColor.2)
-            oldLabel.textColor = UIColor(r: kSelectColor.0, g: kSelectColor.1, b: kSelectColor.2)
-        }else {
-            oldLabel.textColor = UIColor(r: kNormalColor.0, g: kNormalColor.1, b: kNormalColor.2)
-        }
-    
-       
+        oldLabel.textColor = UIColor(r: kNormalColor.0, g: kNormalColor.1, b: kNormalColor.2)
         
         currentIndex = currentLabel.tag
         
@@ -178,7 +175,6 @@ extension PageTitleView {
         
         //4.记录最新的Index
         currentIndex = targetIndex
-        
         
     }
 }
