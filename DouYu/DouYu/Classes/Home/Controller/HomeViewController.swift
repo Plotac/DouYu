@@ -27,7 +27,7 @@ class HomeViewController: UIViewController {
     //PageContentView
     fileprivate lazy var pageContentView : PageContentView = { [weak self] in
         //1.确定内容视图的frame
-        let contentFrame = CGRect(x: 0, y: kStatusBarH+kNavgationBarH+kPageTitleViewH, width: kScreenW, height: kScreenH-kStatusBarH-kNavgationBarH-kPageTitleViewH)
+        let contentFrame = CGRect(x: 0, y: kStatusBarH + kNavgationBarH + kPageTitleViewH, width: kScreenW, height: kScreenH-kStatusBarH-kNavgationBarH-kPageTitleViewH-kTabBarH)
         
         //2.确定所有子视图
         var childVCs = [UIViewController]()

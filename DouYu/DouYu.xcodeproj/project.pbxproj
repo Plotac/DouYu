@@ -25,12 +25,14 @@
 		56DBAEA41EF7D9FC004F98DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DBAEA21EF7D9FC004F98DD /* HomeViewController.swift */; };
 		56DBAEA51EF7D9FC004F98DD /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DBAEA31EF7D9FC004F98DD /* RecommendViewController.swift */; };
 		56DBAEA71EF8C5B3004F98DD /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DBAEA61EF8C5B3004F98DD /* LiveViewController.swift */; };
+		56DBAEAD1EF8D2FE004F98DD /* cycleScrollPlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 56DBAEAC1EF8D2FE004F98DD /* cycleScrollPlaceholder.png */; };
+		56DBAEB11EF91BB3004F98DD /* RecommendHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DBAEB01EF91BB3004F98DD /* RecommendHeaderView.swift */; };
 		57944BF0950AFE3F3818D534 /* Pods_DouYu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA730EBF1CFA60013291B39 /* Pods_DouYu.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		56DBAE591EF7CFAA004F98DD /* DouYu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouYu.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		56DBAE5C1EF7CFAA004F98DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		56DBAE5C1EF7CFAA004F98DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		56DBAE611EF7CFAA004F98DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		56DBAE631EF7CFAA004F98DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56DBAE661EF7CFAA004F98DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,7 +51,8 @@
 		56DBAEA21EF7D9FC004F98DD /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		56DBAEA31EF7D9FC004F98DD /* RecommendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
 		56DBAEA61EF8C5B3004F98DD /* LiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
-		56DBAEA81EF8C60D004F98DD /* DouYu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DouYu-Bridging-Header.h"; sourceTree = "<group>"; };
+		56DBAEAC1EF8D2FE004F98DD /* cycleScrollPlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cycleScrollPlaceholder.png; sourceTree = "<group>"; };
+		56DBAEB01EF91BB3004F98DD /* RecommendHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendHeaderView.swift; sourceTree = "<group>"; };
 		8BBE3386A115C26DBB4EF9F3 /* Pods-DouYu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYu.release.xcconfig"; path = "Pods/Target Support Files/Pods-DouYu/Pods-DouYu.release.xcconfig"; sourceTree = "<group>"; };
 		C8DDDEB2EA10B560C9495F53 /* Pods-DouYu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DouYu/Pods-DouYu.debug.xcconfig"; sourceTree = "<group>"; };
 		EAA730EBF1CFA60013291B39 /* Pods_DouYu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DouYu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,7 +91,7 @@
 		56DBAE5B1EF7CFAA004F98DD /* DouYu */ = {
 			isa = PBXGroup;
 			children = (
-				56DBAE5C1EF7CFAA004F98DD /* AppDelegate.swift */,
+				56DBAEAB1EF8D102004F98DD /* Resource */,
 				56DBAE6E1EF7D1CA004F98DD /* Classes */,
 				56DBAE631EF7CFAA004F98DD /* Assets.xcassets */,
 				56DBAE651EF7CFAA004F98DD /* LaunchScreen.storyboard */,
@@ -100,6 +103,7 @@
 		56DBAE6E1EF7D1CA004F98DD /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				56DBAE5C1EF7CFAA004F98DD /* AppDelegate.swift */,
 				56DBAE741EF7D1CA004F98DD /* Tools */,
 				56DBAE751EF7D1F0004F98DD /* Main */,
 				56DBAE711EF7D1CA004F98DD /* Home */,
@@ -170,7 +174,6 @@
 			isa = PBXGroup;
 			children = (
 				56DBAE971EF7D9A8004F98DD /* Common.swift */,
-				56DBAEA81EF8C60D004F98DD /* DouYu-Bridging-Header.h */,
 				56DBAE991EF7D9D5004F98DD /* Extension */,
 			);
 			path = Tools;
@@ -230,6 +233,7 @@
 		56DBAE8A1EF7D8BA004F98DD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				56DBAEB01EF91BB3004F98DD /* RecommendHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -328,6 +332,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		56DBAEAB1EF8D102004F98DD /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				56DBAEAC1EF8D2FE004F98DD /* cycleScrollPlaceholder.png */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		A09DC3703D02E3FEA711893E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -409,6 +421,7 @@
 			files = (
 				56DBAE671EF7CFAA004F98DD /* LaunchScreen.storyboard in Resources */,
 				56DBAE641EF7CFAA004F98DD /* Assets.xcassets in Resources */,
+				56DBAEAD1EF8D2FE004F98DD /* cycleScrollPlaceholder.png in Resources */,
 				56DBAE621EF7CFAA004F98DD /* Main.storyboard in Resources */,
 				56DBAE7D1EF7D74B004F98DD /* Focus.storyboard in Resources */,
 				56DBAE7F1EF7D760004F98DD /* Found.storyboard in Resources */,
@@ -478,6 +491,7 @@
 				56DBAEA51EF7D9FC004F98DD /* RecommendViewController.swift in Sources */,
 				56DBAE5D1EF7CFAA004F98DD /* AppDelegate.swift in Sources */,
 				56DBAEA71EF8C5B3004F98DD /* LiveViewController.swift in Sources */,
+				56DBAEB11EF91BB3004F98DD /* RecommendHeaderView.swift in Sources */,
 				56DBAEA41EF7D9FC004F98DD /* HomeViewController.swift in Sources */,
 				56DBAEA11EF7D9ED004F98DD /* PageContentView.swift in Sources */,
 				56DBAE981EF7D9A8004F98DD /* Common.swift in Sources */,
@@ -638,7 +652,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = plo.DouYu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/plo/DouYu/DouYu/DouYu/Classes/Tools/DouYu-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -654,7 +668,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = plo.DouYu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/plo/DouYu/DouYu/DouYu/Classes/Tools/DouYu-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -678,6 +692,7 @@
 				56DBAE6D1EF7CFAA004F98DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
