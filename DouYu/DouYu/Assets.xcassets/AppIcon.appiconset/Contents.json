@@ -117,20 +117,6 @@
       "idiom" : "car",
       "filename" : "AppIcon60x60@3x-1.png",
       "scale" : "3x"
-    },
-    {
-      "size" : "60x60",
-      "idiom" : "iphone",
-      "filename" : "AppIcon60x60@2x.png",
-      "unassigned" : true,
-      "scale" : "2x"
-    },
-    {
-      "size" : "60x60",
-      "idiom" : "car",
-      "filename" : "AppIcon60x60@3x.png",
-      "unassigned" : true,
-      "scale" : "3x"
     }
   ],
   "info" : {

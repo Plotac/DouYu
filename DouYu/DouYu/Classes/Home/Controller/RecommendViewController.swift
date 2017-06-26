@@ -16,7 +16,7 @@ fileprivate let kItemW : CGFloat = (kScreenW - kItemMargin * 3) / 2
 //item高
 fileprivate let kItemH : CGFloat = kItemW * 3/4
 //带轮播图的headerView的高
-fileprivate let kCycleScrollHeaderH : CGFloat = 220
+fileprivate let kCycleScrollHeaderH : CGFloat = 290
 //普通的headerView的高
 fileprivate let kNormalHeaderH : CGFloat = 45
 
@@ -56,17 +56,7 @@ class RecommendViewController: UIViewController {
         
         return coll
     }()
-//    fileprivate lazy var headerView : AppHeaderView = {
-//        
-//        var type = AppHeaderViewType.cycleAndButtons
-//        if currentSection != 0 {
-//            type = AppHeaderViewType.onlyButtons
-//        }
-//        
-//        let header = AppHeaderView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: 240), dataArray: ["cycleScrollPlaceholder","cycleScrollPlaceholder","cycleScrollPlaceholder","","cycleScrollPlaceholder"], type:AppHeaderViewType.cycleAndButtons)
-//        
-//        return header
-//    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -112,7 +102,7 @@ extension RecommendViewController : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-   
+        
         var headView = UICollectionReusableView()
         
         if indexPath.section == 0 {
@@ -133,7 +123,7 @@ extension RecommendViewController : UICollectionViewDelegate {
 }
 
 // Mark : - UICollectionViewFlowLayout
-extension RecommendHeaderView : UICollectionViewDelegateFlowLayout {
+extension RecommendViewController : UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         
@@ -145,7 +135,5 @@ extension RecommendHeaderView : UICollectionViewDelegateFlowLayout {
         
         return size
     }
-
-
 }
 
