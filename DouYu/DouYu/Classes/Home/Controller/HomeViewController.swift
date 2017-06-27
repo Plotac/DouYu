@@ -130,7 +130,7 @@ extension HomeViewController : PageTitleViewDelegate {
     }
 }
 
-//Mark: - PageTitleViewDelegate 
+//Mark: - PageContentViewDelegate 
 extension HomeViewController : PageContentViewDelegate {
     func pageContentView(pageContentView: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
         pageTitleView.setTitlesWith(progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)

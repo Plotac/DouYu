@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		562927211F00EA3A00631B42 /* RecommendNormalHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562927201F00EA3A00631B42 /* RecommendNormalHeaderView.swift */; };
 		56DBAE5D1EF7CFAA004F98DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DBAE5C1EF7CFAA004F98DD /* AppDelegate.swift */; };
 		56DBAE621EF7CFAA004F98DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56DBAE601EF7CFAA004F98DD /* Main.storyboard */; };
 		56DBAE641EF7CFAA004F98DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56DBAE631EF7CFAA004F98DD /* Assets.xcassets */; };
@@ -26,12 +27,13 @@
 		56DBAEA51EF7D9FC004F98DD /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DBAEA31EF7D9FC004F98DD /* RecommendViewController.swift */; };
 		56DBAEA71EF8C5B3004F98DD /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DBAEA61EF8C5B3004F98DD /* LiveViewController.swift */; };
 		56DBAEAD1EF8D2FE004F98DD /* cycleScrollPlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 56DBAEAC1EF8D2FE004F98DD /* cycleScrollPlaceholder.png */; };
-		56DBAEB11EF91BB3004F98DD /* RecommendHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DBAEB01EF91BB3004F98DD /* RecommendHeaderView.swift */; };
+		56DBAEB11EF91BB3004F98DD /* RecommendCycleScrollHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DBAEB01EF91BB3004F98DD /* RecommendCycleScrollHeaderView.swift */; };
 		56F7B9DD1EFBBD7D00F05256 /* RecommendScrollViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F7B9DC1EFBBD7D00F05256 /* RecommendScrollViewItem.swift */; };
 		57944BF0950AFE3F3818D534 /* Pods_DouYu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA730EBF1CFA60013291B39 /* Pods_DouYu.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		562927201F00EA3A00631B42 /* RecommendNormalHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendNormalHeaderView.swift; sourceTree = "<group>"; };
 		56DBAE591EF7CFAA004F98DD /* DouYu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouYu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DBAE5C1EF7CFAA004F98DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		56DBAE611EF7CFAA004F98DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -53,7 +55,7 @@
 		56DBAEA31EF7D9FC004F98DD /* RecommendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
 		56DBAEA61EF8C5B3004F98DD /* LiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
 		56DBAEAC1EF8D2FE004F98DD /* cycleScrollPlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cycleScrollPlaceholder.png; sourceTree = "<group>"; };
-		56DBAEB01EF91BB3004F98DD /* RecommendHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendHeaderView.swift; sourceTree = "<group>"; };
+		56DBAEB01EF91BB3004F98DD /* RecommendCycleScrollHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendCycleScrollHeaderView.swift; sourceTree = "<group>"; };
 		56F7B9DC1EFBBD7D00F05256 /* RecommendScrollViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendScrollViewItem.swift; sourceTree = "<group>"; };
 		8BBE3386A115C26DBB4EF9F3 /* Pods-DouYu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYu.release.xcconfig"; path = "Pods/Target Support Files/Pods-DouYu/Pods-DouYu.release.xcconfig"; sourceTree = "<group>"; };
 		C8DDDEB2EA10B560C9495F53 /* Pods-DouYu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DouYu/Pods-DouYu.debug.xcconfig"; sourceTree = "<group>"; };
@@ -235,7 +237,8 @@
 		56DBAE8A1EF7D8BA004F98DD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				56DBAEB01EF91BB3004F98DD /* RecommendHeaderView.swift */,
+				56DBAEB01EF91BB3004F98DD /* RecommendCycleScrollHeaderView.swift */,
+				562927201F00EA3A00631B42 /* RecommendNormalHeaderView.swift */,
 				56F7B9DC1EFBBD7D00F05256 /* RecommendScrollViewItem.swift */,
 			);
 			path = View;
@@ -495,10 +498,11 @@
 				56F7B9DD1EFBBD7D00F05256 /* RecommendScrollViewItem.swift in Sources */,
 				56DBAE5D1EF7CFAA004F98DD /* AppDelegate.swift in Sources */,
 				56DBAEA71EF8C5B3004F98DD /* LiveViewController.swift in Sources */,
-				56DBAEB11EF91BB3004F98DD /* RecommendHeaderView.swift in Sources */,
+				56DBAEB11EF91BB3004F98DD /* RecommendCycleScrollHeaderView.swift in Sources */,
 				56DBAEA41EF7D9FC004F98DD /* HomeViewController.swift in Sources */,
 				56DBAEA11EF7D9ED004F98DD /* PageContentView.swift in Sources */,
 				56DBAE981EF7D9A8004F98DD /* Common.swift in Sources */,
+				562927211F00EA3A00631B42 /* RecommendNormalHeaderView.swift in Sources */,
 				56DBAE871EF7D853004F98DD /* MainViewController.swift in Sources */,
 				56DBAE9D1EF7D9E2004F98DD /* UIColor+Extension.swift in Sources */,
 			);

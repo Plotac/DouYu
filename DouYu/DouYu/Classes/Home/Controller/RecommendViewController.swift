@@ -16,9 +16,9 @@ fileprivate let kItemW : CGFloat = (kScreenW - kItemMargin * 3) / 2
 //item高
 fileprivate let kItemH : CGFloat = kItemW * 3/4
 //带轮播图的headerView的高
-fileprivate let kCycleScrollHeaderH : CGFloat = 290
+fileprivate let kCycleScrollHeaderH : CGFloat = 330
 //普通的headerView的高
-fileprivate let kNormalHeaderH : CGFloat = 45
+fileprivate let kNormalHeaderH : CGFloat = 50
 
 //注册的一些views
 fileprivate let kContentCellID : String = "CollectionCell"
@@ -30,8 +30,6 @@ fileprivate let kNormalHeaderID : String = "kNormalHeaderID"
 // Mark : - 系统回调函数
 class RecommendViewController: UIViewController {
 
-    
-    
     // Mark : - 懒加载
     fileprivate lazy var collectionView : UICollectionView = { [ unowned self ] in
         let flowLayout = UICollectionViewFlowLayout()
@@ -50,8 +48,8 @@ class RecommendViewController: UIViewController {
         coll.autoresizingMask = [.flexibleHeight,.flexibleWidth]
         coll.backgroundColor = UIColor.white
         coll.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kContentCellID)
-        coll.register(RecommendHeaderView.self, forSupplementaryViewOfKind:UICollectionElementKindSectionHeader, withReuseIdentifier: kCycleScrollHeaderID)
-        coll.register(UICollectionReusableView.self, forSupplementaryViewOfKind:UICollectionElementKindSectionHeader, withReuseIdentifier: kNormalHeaderID)
+        coll.register(RecommendCycleScrollHeaderView.self, forSupplementaryViewOfKind:UICollectionElementKindSectionHeader, withReuseIdentifier: kCycleScrollHeaderID)
+        coll.register(RecommendNormalHeaderView.self, forSupplementaryViewOfKind:UICollectionElementKindSectionHeader, withReuseIdentifier: kNormalHeaderID)
         
         
         return coll
@@ -109,7 +107,7 @@ extension RecommendViewController : UICollectionViewDataSource {
             headView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kCycleScrollHeaderID, for: indexPath)
         }else {
             headView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kNormalHeaderID, for: indexPath)
-            headView.backgroundColor = UIColor.purple
+            headView.backgroundColor = UIColor.white
         }
         return headView
     }

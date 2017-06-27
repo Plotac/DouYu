@@ -127,9 +127,14 @@ extension PageTitleView {
         
         
         //1.拿到点击之后的当前label
-        guard let currentLabel = tap.view as? UILabel else { return }
+        guard let currentLabel = tap.view as? UILabel else {
+            return
+        }
         
-        if currentIndex == currentLabel.tag { return }
+        if currentIndex == currentLabel.tag {
+            delegate?.pagetTitleView(titleView: self, selectIndex: currentIndex)
+            return
+        }
         
         currentLabel.textColor = UIColor(r: kSelectColor.0, g: kSelectColor.1, b: kSelectColor.2)
         

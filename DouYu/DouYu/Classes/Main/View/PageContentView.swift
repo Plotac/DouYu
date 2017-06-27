@@ -116,7 +116,7 @@ extension PageContentView : UICollectionViewDelegate {
         let currentOffset : CGFloat = scrollView.contentOffset.x
         let scrollViewW : CGFloat = scrollView.bounds.width
 
-        if currentOffset < startOffsetX {//左滑
+        if currentOffset > startOffsetX {//左滑
             
             //左滑：currentOffset增加 所以currentOffset / scrollViewW 是大于0的小数
             //floor()函数 : 取整
