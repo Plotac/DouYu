@@ -10,7 +10,7 @@ import UIKit
 
 // Mark : - 定义常量
 //item边距
-fileprivate let kItemMargin : CGFloat = 10
+fileprivate let kItemMargin : CGFloat = 5
 //item宽
 fileprivate let kItemW : CGFloat = (kScreenW - kItemMargin * 3) / 2
 //item高
@@ -47,7 +47,7 @@ class RecommendViewController: UIViewController {
         coll.delegate = self
         coll.autoresizingMask = [.flexibleHeight,.flexibleWidth]
         coll.backgroundColor = UIColor.white
-        coll.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kContentCellID)
+        coll.register(AppCommonCollectionViewCell.self, forCellWithReuseIdentifier: kContentCellID)
         coll.register(RecommendCycleScrollHeaderView.self, forSupplementaryViewOfKind:UICollectionElementKindSectionHeader, withReuseIdentifier: kCycleScrollHeaderID)
         coll.register(RecommendNormalHeaderView.self, forSupplementaryViewOfKind:UICollectionElementKindSectionHeader, withReuseIdentifier: kNormalHeaderID)
         
@@ -90,7 +90,7 @@ extension RecommendViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kContentCellID, for: indexPath)
         
-        cell.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
+        cell.backgroundColor = UIColor.white
         
         return cell
     }

@@ -12,8 +12,6 @@ fileprivate let kHeaderViewH : CGFloat = 50
 
 // Mark : - 左边距
 fileprivate let kMarginLeft : CGFloat = 15
-// Mark : - 控件间常用间距
-fileprivate let kSpacingBetweenControls : CGFloat = 10
 
 class RecommendNormalHeaderView: UICollectionReusableView {
     
