@@ -21,7 +21,8 @@ fileprivate let kCycleScrollHeaderH : CGFloat = 330
 fileprivate let kNormalHeaderH : CGFloat = 50
 
 //注册的一些views
-fileprivate let kContentCellID : String = "CollectionCell"
+fileprivate let kNormalCell : String = "kCollectionNormalCell"
+fileprivate let kPrettyCell : String = "kCollectionPrettyCell"
 fileprivate let kCycleScrollHeaderID : String = "kCycleScrollHeaderID"
 fileprivate let kNormalHeaderID : String = "kNormalHeaderID"
 
@@ -33,7 +34,7 @@ class RecommendViewController: UIViewController {
     // Mark : - 懒加载
     fileprivate lazy var collectionView : UICollectionView = { [ unowned self ] in
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: kItemW, height: kItemH)
+//        flowLayout.itemSize = CGSize(width: kItemW, height: kItemH)
         flowLayout.minimumLineSpacing = 0
         flowLayout.minimumInteritemSpacing = kItemMargin
         flowLayout.scrollDirection = .vertical
@@ -47,7 +48,8 @@ class RecommendViewController: UIViewController {
         coll.delegate = self
         coll.autoresizingMask = [.flexibleHeight,.flexibleWidth]
         coll.backgroundColor = UIColor.white
-        coll.register(AppCommonCollectionViewCell.self, forCellWithReuseIdentifier: kContentCellID)
+        coll.register(AppPrettyCollectionViewCell.self, forCellWithReuseIdentifier: kPrettyCell)
+        coll.register(AppCommonCollectionViewCell.self, forCellWithReuseIdentifier: kNormalCell)
         coll.register(RecommendCycleScrollHeaderView.self, forSupplementaryViewOfKind:UICollectionElementKindSectionHeader, withReuseIdentifier: kCycleScrollHeaderID)
         coll.register(RecommendNormalHeaderView.self, forSupplementaryViewOfKind:UICollectionElementKindSectionHeader, withReuseIdentifier: kNormalHeaderID)
         
@@ -88,7 +90,14 @@ extension RecommendViewController : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kContentCellID, for: indexPath)
+        
+        var cell : UICollectionViewCell!
+
+        if indexPath.section == 0 {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCell, for: indexPath)
+        }else {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCell, for: indexPath)
+        }
         
         cell.backgroundColor = UIColor.white
         
@@ -122,6 +131,16 @@ extension RecommendViewController : UICollectionViewDelegate {
 
 // Mark : - UICollectionViewFlowLayout
 extension RecommendViewController : UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        var size = CGSize(width: kItemW, height: kItemH)
+        if indexPath.section == 0 {
+            size = CGSize(width: kItemW, height: kItemH + kSpacingBetweenControls * 8)
+        }
+        return size
+        
+    }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         

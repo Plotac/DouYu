@@ -33,9 +33,8 @@ extension AppCommonCollectionViewCell {
         let cellWidth : CGFloat = self.bounds.width
         
         //imageView
-        let imgView = UIImageView(image: UIImage(named: ""))
+        let imgView = UIImageView(image: UIImage(named: "normalcellPlaceholder"))
         contentView.addSubview(imgView)
-        imgView.backgroundColor = UIColor.orange
         imgView.clipsToBounds = true
         imgView.layer.cornerRadius = 8
         imgView.snp.makeConstraints { (make) in
@@ -69,7 +68,7 @@ extension AppCommonCollectionViewCell {
         }
 
         
-        //imageView上的观看人数
+        //rightGraduatedView上的观看人数
         let audienceLab = UILabel()
         audienceLab.text = "90.0万"
         audienceLab.font = UIFont.systemFont(ofSize: 10)
@@ -83,7 +82,7 @@ extension AppCommonCollectionViewCell {
             make.size.equalTo(CGSize(width: getWidthFunc(10,rightGraduatedViewHeight), height: rightGraduatedViewHeight))
         }
         
-        //imageView上的观看人数图标
+        //rightGraduatedView上的观看人数图标
         let audienceIcon = UIImageView(image: UIImage(named: "AudienceIcon"))
         rightGraduatedView.addSubview(audienceIcon)
         audienceIcon.snp.makeConstraints { (make) in
@@ -93,7 +92,7 @@ extension AppCommonCollectionViewCell {
         }
         
         //imageView上的主播图标
-        let performerIcon = UIImageView(image: UIImage(named: "PerformerIcon"))
+        let performerIcon = UIImageView(image: UIImage(named: "PerformerIcon_white"))
         imgView.addSubview(performerIcon)
         performerIcon.snp.makeConstraints { (make) in
             make.left.equalTo(imgView).offset(5)

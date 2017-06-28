@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		561E1A7F1F03655300B78E47 /* prettycellPlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 561E1A7D1F03655200B78E47 /* prettycellPlaceholder.png */; };
+		561E1A801F03655300B78E47 /* normalcellPlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 561E1A7E1F03655200B78E47 /* normalcellPlaceholder.png */; };
+		561E1A831F03927700B78E47 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561E1A821F03927700B78E47 /* NetworkTools.swift */; };
 		562927211F00EA3A00631B42 /* RecommendNormalHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562927201F00EA3A00631B42 /* RecommendNormalHeaderView.swift */; };
 		56685A271F0202B300D9078A /* AppCommonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56685A261F0202B300D9078A /* AppCommonCollectionViewCell.swift */; };
 		56685A2A1F0243FE00D9078A /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56685A291F0243FE00D9078A /* String+Extension.swift */; };
@@ -36,6 +39,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		561E1A7D1F03655200B78E47 /* prettycellPlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = prettycellPlaceholder.png; sourceTree = "<group>"; };
+		561E1A7E1F03655200B78E47 /* normalcellPlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = normalcellPlaceholder.png; sourceTree = "<group>"; };
+		561E1A821F03927700B78E47 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		562927201F00EA3A00631B42 /* RecommendNormalHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendNormalHeaderView.swift; sourceTree = "<group>"; };
 		56685A261F0202B300D9078A /* AppCommonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCommonCollectionViewCell.swift; sourceTree = "<group>"; };
 		56685A291F0243FE00D9078A /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -80,6 +86,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		561E1A811F0365A800B78E47 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				56DBAEAC1EF8D2FE004F98DD /* cycleScrollPlaceholder.png */,
+				561E1A7D1F03655200B78E47 /* prettycellPlaceholder.png */,
+				561E1A7E1F03655200B78E47 /* normalcellPlaceholder.png */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
 		56DBAE501EF7CFAA004F98DD = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				56DBAE971EF7D9A8004F98DD /* Common.swift */,
+				561E1A821F03927700B78E47 /* NetworkTools.swift */,
 				56DBAE991EF7D9D5004F98DD /* Extension */,
 			);
 			path = Tools;
@@ -350,7 +367,7 @@
 		56DBAEAB1EF8D102004F98DD /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				56DBAEAC1EF8D2FE004F98DD /* cycleScrollPlaceholder.png */,
+				561E1A811F0365A800B78E47 /* Home */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -440,9 +457,11 @@
 				56DBAE621EF7CFAA004F98DD /* Main.storyboard in Resources */,
 				56DBAE7D1EF7D74B004F98DD /* Focus.storyboard in Resources */,
 				56DBAE7F1EF7D760004F98DD /* Found.storyboard in Resources */,
+				561E1A801F03655300B78E47 /* normalcellPlaceholder.png in Resources */,
 				56DBAE7A1EF7D723004F98DD /* Live.storyboard in Resources */,
 				56DBAE781EF7D713004F98DD /* Home.storyboard in Resources */,
 				56DBAE821EF7D76F004F98DD /* Mine.storyboard in Resources */,
+				561E1A7F1F03655300B78E47 /* prettycellPlaceholder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +521,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56DBAEA01EF7D9ED004F98DD /* PageTitleView.swift in Sources */,
+				561E1A831F03927700B78E47 /* NetworkTools.swift in Sources */,
 				56DBAE9C1EF7D9E2004F98DD /* UIBarButtonItem+Extension.swift in Sources */,
 				56DBAEA51EF7D9FC004F98DD /* RecommendViewController.swift in Sources */,
 				56685A271F0202B300D9078A /* AppCommonCollectionViewCell.swift in Sources */,
