@@ -32,6 +32,7 @@ fileprivate let kNormalHeaderID : String = "kNormalHeaderID"
 class RecommendViewController: UIViewController {
 
     // Mark : - 懒加载
+    fileprivate lazy var recommendVM = RecommendViewModel()
     fileprivate lazy var collectionView : UICollectionView = { [ unowned self ] in
         let flowLayout = UICollectionViewFlowLayout()
 //        flowLayout.itemSize = CGSize(width: kItemW, height: kItemH)
@@ -62,7 +63,7 @@ class RecommendViewController: UIViewController {
         
         setupUI()
         
-        
+        requestData()
     }
 
 
@@ -75,6 +76,14 @@ extension RecommendViewController {
         
         view.addSubview(collectionView)
     
+    }
+}
+// Mark : - 请求数据
+extension RecommendViewController {
+    
+    fileprivate func requestData() {
+        
+        recommendVM.requestData()
     }
 }
 
