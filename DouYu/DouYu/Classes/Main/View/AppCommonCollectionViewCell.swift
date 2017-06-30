@@ -11,6 +11,34 @@ import UIKit
 
 class AppCommonCollectionViewCell: UICollectionViewCell {
     
+    //控件设置
+    var imgView : UIImageView = UIImageView()
+    var audienceLab : UILabel = UILabel()
+    var performerLab : UILabel = UILabel()
+    var titleLab :UILabel = UILabel()
+    
+    var anchor : AnchorModel? {
+        
+        didSet {
+            
+            guard let anchor = anchor else {
+                return
+            }
+            
+            imgView.sd_setImage(with: URL.init(string: (anchor.vertical_src)), placeholderImage: UIImage(named:"normalcellPlaceholder"), options: .retryFailed)
+            if anchor.online < 1000000 && anchor.online >= 10000 {
+                audienceLab.text = String(format:"%.1f万",(Float(anchor.online) / 10000.0))
+            }else if anchor.online >= 1000000 {
+                audienceLab.text = "\(anchor.online / 1000000)万"
+            }else {
+                audienceLab.text = "\(anchor.online)"
+            }
+            performerLab.text = anchor.nickname
+            titleLab.text = anchor.room_name
+        }
+        
+    }
+    
     override init(frame: CGRect) {
         
         super.init(frame: frame)
@@ -33,7 +61,6 @@ extension AppCommonCollectionViewCell {
         let cellWidth : CGFloat = self.bounds.width
         
         //imageView
-        let imgView = UIImageView(image: UIImage(named: "normalcellPlaceholder"))
         contentView.addSubview(imgView)
         imgView.clipsToBounds = true
         imgView.layer.cornerRadius = 8
@@ -43,7 +70,7 @@ extension AppCommonCollectionViewCell {
         }
         
         //imageView右上角View
-        let rightGraduatedViewWidth : CGFloat = 60
+        let rightGraduatedViewWidth : CGFloat = 57
         let rightGraduatedViewHeight : CGFloat = 20
         
         let rightGraduatedView = UIView()
@@ -69,17 +96,16 @@ extension AppCommonCollectionViewCell {
 
         
         //rightGraduatedView上的观看人数
-        let audienceLab = UILabel()
-        audienceLab.text = "90.0万"
         audienceLab.font = UIFont.systemFont(ofSize: 10)
         audienceLab.textColor = UIColor.white
-        audienceLab.textAlignment = .right
-        let getWidthFunc = String.ja_widthForComment(audienceLab.text!)
+        audienceLab.textAlignment = .center
+//        audienceLab.backgroundColor = UIColor.red
+//        let getWidthFunc = String.ja_widthForComment(audienceLab.text!)
         rightGraduatedView.addSubview(audienceLab)
         audienceLab.snp.makeConstraints { (make) in
             make.top.equalTo(self)
             make.right.equalTo(self).offset(-5)
-            make.size.equalTo(CGSize(width: getWidthFunc(10,rightGraduatedViewHeight), height: rightGraduatedViewHeight))
+            make.size.equalTo(CGSize(width: 40, height: rightGraduatedViewHeight))
         }
         
         //rightGraduatedView上的观看人数图标
@@ -101,7 +127,6 @@ extension AppCommonCollectionViewCell {
         }
         
         //imageView上的主播名
-        let performerLab = UILabel()
         performerLab.text = "老实憨厚的笑笑"
         performerLab.font = UIFont.systemFont(ofSize: 10)
         performerLab.textColor = UIColor.white
@@ -114,7 +139,6 @@ extension AppCommonCollectionViewCell {
         }
 
         //主播标题
-        let titleLab = UILabel()
         contentView.addSubview(titleLab)
         titleLab.text = "老陶：蠢货们啊哈哈哈哈哈哈哈哈哈哈"
         titleLab.font = UIFont.systemFont(ofSize: 12)

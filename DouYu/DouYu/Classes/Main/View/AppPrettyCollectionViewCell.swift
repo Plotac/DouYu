@@ -10,6 +10,33 @@ import UIKit
 
 class AppPrettyCollectionViewCell: UICollectionViewCell {
     
+    //控件设置
+    var imgView : UIImageView = UIImageView()
+    var audienceLab : UILabel = UILabel()
+    var performerLab : UILabel = UILabel()
+    var locationLab :UILabel = UILabel()
+    
+    
+    var anchor : AnchorModel? {
+    
+        didSet {
+            guard let anchor = anchor else {
+                return
+            }
+            imgView.sd_setImage(with: URL.init(string: (anchor.vertical_src)), placeholderImage: UIImage(named:"prettycellPlaceholder"), options: .retryFailed)
+            if anchor.online < 1000000 && anchor.online >= 10000 {
+                audienceLab.text = String(format:"%.1f万",(Float(anchor.online) / 10000.0))
+            }else if anchor.online >= 1000000 {
+                audienceLab.text = "\(anchor.online / 1000000)万"
+            }else {
+                audienceLab.text = "\(anchor.online)"
+            }
+            performerLab.text = anchor.nickname
+            locationLab.text = anchor.anchor_city
+        }
+    
+    }
+    
     override init(frame: CGRect) {
         
         super.init(frame: frame)
@@ -33,7 +60,6 @@ extension AppPrettyCollectionViewCell {
         let cellWidth : CGFloat = self.bounds.width
         
         //imageView
-        let imgView = UIImageView(image: UIImage(named: "prettycellPlaceholder"))
         contentView.addSubview(imgView)
         imgView.clipsToBounds = true
         imgView.layer.cornerRadius = 8
@@ -43,7 +69,7 @@ extension AppPrettyCollectionViewCell {
         }
         
         //imageView右上角View
-        let rightViewWidth : CGFloat = 55
+        let rightViewWidth : CGFloat = 57
         let rightViewHeight : CGFloat = 25
         
         let rightView = UIView()
@@ -58,18 +84,14 @@ extension AppPrettyCollectionViewCell {
         }
         
         //rightView上的观看人数
-        let audienceLab = UILabel()
-        audienceLab.text = "4396"
         audienceLab.font = UIFont.systemFont(ofSize: 11)
         audienceLab.textColor = UIColor.white
-//        audienceLab.backgroundColor = UIColor.red
-        audienceLab.textAlignment = .right
-        let getAudienceLabWidthFunc = String.ja_widthForComment(audienceLab.text!)
+        audienceLab.textAlignment = .center
         rightView.addSubview(audienceLab)
         audienceLab.snp.makeConstraints { (make) in
             make.top.equalTo(rightView)
             make.right.equalTo(rightView.snp.right).offset(-5)
-            make.size.equalTo(CGSize(width: getAudienceLabWidthFunc(11,rightViewHeight), height: rightViewHeight))
+            make.size.equalTo(CGSize(width: 40, height: rightViewHeight))
         }
         
         //rightView上的观看人数图标
@@ -77,7 +99,7 @@ extension AppPrettyCollectionViewCell {
         rightView.addSubview(audienceIcon)
         audienceIcon.snp.makeConstraints { (make) in
             make.centerY.equalTo(audienceLab)
-            make.left.equalTo(rightView).offset(4)
+            make.right.equalTo(audienceLab.snp.left).offset(1)
             make.size.equalTo(CGSize(width: 11, height: 11))
         }
         
@@ -91,8 +113,6 @@ extension AppPrettyCollectionViewCell {
         }
 
         //主播名
-        let performerLab = UILabel()
-        performerLab.text = "周二喵"
         performerLab.font = UIFont.systemFont(ofSize: 13)
         performerLab.textColor = UIColor(r: 80, g: 80, b: 80)
         performerLab.textAlignment = .left
@@ -104,7 +124,6 @@ extension AppPrettyCollectionViewCell {
         }
         
         //位置label
-        let locationLab = UILabel()
         locationLab.text = "牡丹江市"
         let getLocationLabWidthFunc = String.ja_widthForComment(locationLab.text!)
         locationLab.font = UIFont.systemFont(ofSize: 12)

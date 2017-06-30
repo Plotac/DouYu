@@ -15,6 +15,21 @@ fileprivate let kMarginLeft : CGFloat = 15
 
 class RecommendNormalHeaderView: UICollectionReusableView {
     
+    var titleLab : UILabel = UILabel()
+    var iconImageView : UIImageView = UIImageView()
+    
+    var group : AnchorGroup? {
+        
+        didSet {
+            
+            titleLab.text = group?.tag_name
+            iconImageView.sd_setImage(with: URL.init(string: group?.small_icon_url ?? "YanzhiIcon"), placeholderImage: UIImage(named:"HeadViewNormalIcon"), options:.retryFailed)
+            if group?.tag_name == "颜值" {
+                iconImageView.image = UIImage(named: "YanzhiIcon")
+            }
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -38,22 +53,21 @@ extension RecommendNormalHeaderView {
         topGrayView.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: topGrayViewH)
         addSubview(topGrayView)
         
-        //最热图标
-        let iconW : CGFloat = 15
-        let iconH : CGFloat = 17
+        //分组图标
+        let iconW : CGFloat = 20
+        let iconH : CGFloat = 20
         let topAndBottonMargin = (kHeaderViewH - iconH - topGrayViewH) / 2
         
-        let icon = UIImageView(image: UIImage(named:"HeadViewIcon"))
-        icon.frame = CGRect(x: kMarginLeft, y: topAndBottonMargin + topGrayViewH, width: iconW, height: iconH)
-        addSubview(icon)
+        iconImageView = UIImageView(image: UIImage(named:"HeadViewHotIcon"))
+        iconImageView.frame = CGRect(x: kMarginLeft, y: topAndBottonMargin + topGrayViewH, width: iconW, height: iconH)
+        addSubview(iconImageView)
         
-        //最热label
+        //分组label
         let titleLabW : CGFloat = 100
         let titleLabH : CGFloat = 20
-        
-        let titleLab = UILabel()
-        titleLab.frame = CGRect(x: icon.frame.origin.x + iconW + kSpacingBetweenControls, y: icon.frame.origin.y, width: titleLabW, height: titleLabH)
-        titleLab.text = "最热"
+
+        titleLab.frame = CGRect(x: iconImageView.frame.origin.x + iconW + kSpacingBetweenControls, y: iconImageView.frame.origin.y, width: titleLabW, height: titleLabH)
+//        titleLab.text = "最热"
         titleLab.font = UIFont.systemFont(ofSize: 16)
         titleLab.textColor = UIColor(r: 110, g: 110, b: 110)
         addSubview(titleLab)
@@ -63,7 +77,7 @@ extension RecommendNormalHeaderView {
         let rightViewH : CGFloat = 30
         
         let rightView = UIView()
-        rightView.frame = CGRect(x: self.bounds.width - rightViewW - kSpacingBetweenControls, y: icon.frame.origin.y - kSpacingBetweenControls / 2, width: rightViewW, height: rightViewH)
+        rightView.frame = CGRect(x: self.bounds.width - rightViewW - kSpacingBetweenControls, y: iconImageView.frame.origin.y - kSpacingBetweenControls / 2, width: rightViewW, height: rightViewH)
         addSubview(rightView)
         
         //右侧view上的跳转图标

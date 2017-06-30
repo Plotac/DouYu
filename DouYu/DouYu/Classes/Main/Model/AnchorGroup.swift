@@ -10,7 +10,8 @@ import UIKit
 
 class AnchorGroup: NSObject {
     
-    /*方法2
+    //方法2
+    //主播房间列表
     var room_list : [[String : NSObject]]? {
         didSet {//属性监听器，当属性有变化时会调用
             guard let room_list = room_list else { return }
@@ -19,15 +20,21 @@ class AnchorGroup: NSObject {
             }
         }
     }
-    */
-    //主播房间列表
-    var room_list : [[String : NSObject]]?
+    
+    
+//    var room_list : [[String : NSObject]]?
     //组头图标
-    var icon_url : String = ""
+    var small_icon_url : String = ""
     //分类名称
     var tag_name : String = ""
+    
     //主播model对应的数组
     lazy var anchors : [AnchorModel] = [AnchorModel]()
+    
+    //构造函数
+    override init() {
+        
+    }
     
     init(dict : [String : NSObject]) {
         super.init()
@@ -36,14 +43,14 @@ class AnchorGroup: NSObject {
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {}
     
-    //方法1
-    override func setValue(_ value: Any?, forKey key: String) {
-        if key == "room_list" {
-            if let dataArray = value as? [[String : NSObject]] {
-                for dict in dataArray {
-                    anchors.append(AnchorModel(dict: dict))
-                }
-            }
-        }
-    }
+//    //方法1
+//    override func setValue(_ value: Any?, forKey key: String) {
+//        if key == "room_list" {
+//            if let dataArray = value as? [[String : NSObject]] {
+//                for dict in dataArray {
+//                    anchors.append(AnchorModel(dict: dict))
+//                }
+//            }
+//        }
+//    }
 }

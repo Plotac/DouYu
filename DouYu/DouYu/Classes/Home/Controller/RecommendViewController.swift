@@ -51,6 +51,7 @@ class RecommendViewController: UIViewController {
         coll.backgroundColor = UIColor.white
         coll.register(AppPrettyCollectionViewCell.self, forCellWithReuseIdentifier: kPrettyCell)
         coll.register(AppCommonCollectionViewCell.self, forCellWithReuseIdentifier: kNormalCell)
+        
         coll.register(RecommendCycleScrollHeaderView.self, forSupplementaryViewOfKind:UICollectionElementKindSectionHeader, withReuseIdentifier: kCycleScrollHeaderID)
         coll.register(RecommendNormalHeaderView.self, forSupplementaryViewOfKind:UICollectionElementKindSectionHeader, withReuseIdentifier: kNormalHeaderID)
         
@@ -61,9 +62,9 @@ class RecommendViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI()
-        
         requestData()
+        
+        setupUI()
     }
 
 
@@ -83,7 +84,9 @@ extension RecommendViewController {
     
     fileprivate func requestData() {
         
-        recommendVM.requestData()
+        recommendVM.requestData { 
+            self.collectionView.reloadData()
+        }
     }
 }
 
@@ -91,43 +94,46 @@ extension RecommendViewController {
 extension RecommendViewController : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        let group = recommendVM.anchorGroups[section]
         
-        if section == 0 {
-            return 8
-        }
-        return 4
+        return group.anchors.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        var cell : UICollectionViewCell!
+        let group = recommendVM.anchorGroups[indexPath.section]
+        let anchor = group.anchors[indexPath.item]
 
-        if indexPath.section == 0 {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCell, for: indexPath)
+        if indexPath.section == 1 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCell, for: indexPath) as! AppPrettyCollectionViewCell
+            cell.backgroundColor = UIColor.white
+            cell.anchor = anchor
+            return cell
         }else {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCell, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCell, for: indexPath) as! AppCommonCollectionViewCell
+            cell.backgroundColor = UIColor.white
+            cell.anchor = anchor
+            return cell
         }
-        
-        cell.backgroundColor = UIColor.white
-        
-        return cell
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 14
+        return recommendVM.anchorGroups.count
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
-        var headView = UICollectionReusableView()
-        
         if indexPath.section == 0 {
-            headView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kCycleScrollHeaderID, for: indexPath)
+            let headView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kCycleScrollHeaderID, for: indexPath) as! RecommendCycleScrollHeaderView
+            
+            headView.group = recommendVM.anchorGroups[indexPath.section]
+            return headView
         }else {
-            headView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kNormalHeaderID, for: indexPath)
-            headView.backgroundColor = UIColor.white
+            let headView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kNormalHeaderID, for: indexPath) as! RecommendNormalHeaderView
+            headView.group = recommendVM.anchorGroups[indexPath.section]
+            return headView
         }
-        return headView
+        
     }
     
 }
@@ -144,7 +150,7 @@ extension RecommendViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         var size = CGSize(width: kItemW, height: kItemH)
-        if indexPath.section == 0 {
+        if indexPath.section == 1 {
             size = CGSize(width: kItemW, height: kItemH + kSpacingBetweenControls * 8)
         }
         return size

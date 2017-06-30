@@ -9,6 +9,7 @@
 import UIKit
 import SDCycleScrollView
 
+
 // Mark : - 轮播图高度
 fileprivate let kSDScrollViewH : CGFloat = 180
 // Mark : - button高度
@@ -20,6 +21,19 @@ fileprivate let kNormalViewH : CGFloat = 50
 fileprivate let kMarginLeft : CGFloat = 15
 
 class RecommendCycleScrollHeaderView: UICollectionReusableView {
+    
+    var titleLab : UILabel = UILabel()
+    var iconImageView : UIImageView = UIImageView()
+
+    var group : AnchorGroup? {
+        
+        didSet {
+        
+            titleLab.text = group?.tag_name
+            
+        }
+    }
+    
     
     override init(frame: CGRect) {
         
@@ -82,22 +96,21 @@ extension RecommendCycleScrollHeaderView {
         topGrayView.frame = CGRect(x: 0, y: kSDScrollViewH + kCycleScrollButtonH, width: self.bounds.width, height: topGrayViewH)
         addSubview(topGrayView)
         
-        //最热图标
+        //组分类图标
         let iconW : CGFloat = 15
         let iconH : CGFloat = 17
         let topAndBottonMargin = (kNormalViewH - iconH - topGrayViewH) / 2
         
-        let icon = UIImageView(image: UIImage(named:"HeadViewIcon"))
-        icon.frame = CGRect(x: kMarginLeft, y: topGrayView.frame.origin.y + topAndBottonMargin + topGrayViewH, width: iconW, height: iconH)
-        addSubview(icon)
+        iconImageView = UIImageView(image: UIImage(named:"HeadViewHotIcon"))
+        iconImageView.frame = CGRect(x: kMarginLeft, y: topGrayView.frame.origin.y + topAndBottonMargin + topGrayViewH, width: iconW, height: iconH)
+        addSubview(iconImageView)
         
-        //最热label
+        //组分类label
         let titleLabW : CGFloat = 100
         let titleLabH : CGFloat = 20
-        
-        let titleLab = UILabel()
-        titleLab.frame = CGRect(x: icon.frame.origin.x + iconW + kSpacingBetweenControls, y: icon.frame.origin.y, width: titleLabW, height: titleLabH)
-        titleLab.text = "最热"
+
+        titleLab.frame = CGRect(x: iconImageView.frame.origin.x + iconW + kSpacingBetweenControls, y: iconImageView.frame.origin.y, width: titleLabW, height: titleLabH)
+//        titleLab.text = "最热"
         titleLab.font = UIFont.systemFont(ofSize: 16)
         titleLab.textColor = UIColor(r: 110, g: 110, b: 110)
         addSubview(titleLab)
@@ -107,7 +120,7 @@ extension RecommendCycleScrollHeaderView {
         let rightViewH : CGFloat = 30
         
         let rightView = UIView()
-        rightView.frame = CGRect(x: self.bounds.width - rightViewW - kSpacingBetweenControls, y: icon.frame.origin.y - kSpacingBetweenControls / 2, width: rightViewW, height: rightViewH)
+        rightView.frame = CGRect(x: self.bounds.width - rightViewW - kSpacingBetweenControls, y: iconImageView.frame.origin.y - kSpacingBetweenControls / 2, width: rightViewW, height: rightViewH)
         addSubview(rightView)
         
         //右侧view上的跳转图标
