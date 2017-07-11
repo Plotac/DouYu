@@ -22,6 +22,20 @@ fileprivate let kMarginLeft : CGFloat = 15
 
 class RecommendCycleScrollHeaderView: UICollectionReusableView {
     
+    var urlStrs : [String] = [String]()
+    
+    //设置属性
+    var modelGroup : [CycleModel]! = [] {
+        didSet {
+            guard let modelGroup = modelGroup else { return }
+            
+            for model in modelGroup {
+                urlStrs.append(model.pic_url)
+            }
+            sdScrollView.imageURLStringsGroup = urlStrs
+        }
+    }
+    
     var titleLab : UILabel = UILabel()
     var iconImageView : UIImageView = UIImageView()
 
@@ -33,7 +47,6 @@ class RecommendCycleScrollHeaderView: UICollectionReusableView {
             
         }
     }
-    
     
     override init(frame: CGRect) {
         
@@ -49,17 +62,13 @@ class RecommendCycleScrollHeaderView: UICollectionReusableView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    fileprivate lazy var sdScrollView : SDCycleScrollView = { [weak self] in
-        
-        let images : [UIImage] = [UIImage(named:"cycleScrollPlaceholder")!,UIImage(named:"cycleScrollPlaceholder")!,UIImage(named:"cycleScrollPlaceholder")!,UIImage(named:"cycleScrollPlaceholder")!]
-        
-        let scroll = SDCycleScrollView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: kSDScrollViewH), imageNamesGroup: images)
+    fileprivate lazy var sdScrollView : SDCycleScrollView = { [unowned self] in
+
+        let scroll = SDCycleScrollView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: kSDScrollViewH), delegate: self as SDCycleScrollViewDelegate!, placeholderImage: UIImage(named:"cycleScrollPlaceholder")!)
         scroll?.currentPageDotColor = UIColor.orange
         scroll?.pageDotColor = UIColor.white
-//        scroll?.delegate = self as! SDCycleScrollViewDelegate!
         return scroll!
     }()
-    
 }
 
 extension RecommendCycleScrollHeaderView {
@@ -142,6 +151,14 @@ extension RecommendCycleScrollHeaderView {
         moreLabel.text = "更多"
         rightView.addSubview(moreLabel)
 
+    }
+
+}
+
+extension RecommendCycleScrollHeaderView : SDCycleScrollViewDelegate {
+    
+    func cycleScrollView(_ cycleScrollView: SDCycleScrollView!, didSelectItemAt index: Int) {
+        print(index)
     }
 
 }

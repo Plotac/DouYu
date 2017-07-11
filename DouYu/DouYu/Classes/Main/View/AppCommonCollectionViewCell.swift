@@ -9,32 +9,19 @@
 import UIKit
 
 
-class AppCommonCollectionViewCell: UICollectionViewCell {
+class AppCommonCollectionViewCell: BaseCollectionViewCell {
     
     //控件设置
-    var imgView : UIImageView = UIImageView()
-    var audienceLab : UILabel = UILabel()
-    var performerLab : UILabel = UILabel()
     var titleLab :UILabel = UILabel()
     
-    var anchor : AnchorModel? {
+    override var anchor : AnchorModel? {
         
         didSet {
+            //将属性传递给父类
+            super.anchor = anchor
             
-            guard let anchor = anchor else {
-                return
-            }
-            
-            imgView.sd_setImage(with: URL.init(string: (anchor.vertical_src)), placeholderImage: UIImage(named:"normalcellPlaceholder"), options: .retryFailed)
-            if anchor.online < 1000000 && anchor.online >= 10000 {
-                audienceLab.text = String(format:"%.1f万",(Float(anchor.online) / 10000.0))
-            }else if anchor.online >= 1000000 {
-                audienceLab.text = "\(anchor.online / 1000000)万"
-            }else {
-                audienceLab.text = "\(anchor.online)"
-            }
-            performerLab.text = anchor.nickname
-            titleLab.text = anchor.room_name
+            //设置属性
+            titleLab.text = anchor?.room_name
         }
         
     }

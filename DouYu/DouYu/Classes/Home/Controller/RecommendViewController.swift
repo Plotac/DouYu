@@ -30,7 +30,9 @@ fileprivate let kNormalHeaderID : String = "kNormalHeaderID"
 
 // Mark : - 系统回调函数
 class RecommendViewController: UIViewController {
-
+    
+    var cycModels : [CycleModel]?
+    
     // Mark : - 懒加载
     fileprivate lazy var recommendVM = RecommendViewModel()
     fileprivate lazy var collectionView : UICollectionView = { [ unowned self ] in
@@ -84,7 +86,14 @@ extension RecommendViewController {
     
     fileprivate func requestData() {
         
-        recommendVM.requestData { 
+        
+        recommendVM.requestData {
+            print("---requestData")
+            self.collectionView.reloadData()
+        }
+
+        recommendVM.requestCycleData {
+            print("requestCycleData")
             self.collectionView.reloadData()
         }
     }
@@ -104,17 +113,17 @@ extension RecommendViewController : UICollectionViewDataSource {
         let group = recommendVM.anchorGroups[indexPath.section]
         let anchor = group.anchors[indexPath.item]
 
+        var cell : BaseCollectionViewCell!
+        
         if indexPath.section == 1 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCell, for: indexPath) as! AppPrettyCollectionViewCell
-            cell.backgroundColor = UIColor.white
-            cell.anchor = anchor
-            return cell
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCell, for: indexPath) as! AppPrettyCollectionViewCell
         }else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCell, for: indexPath) as! AppCommonCollectionViewCell
-            cell.backgroundColor = UIColor.white
-            cell.anchor = anchor
-            return cell
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCell, for: indexPath) as! AppCommonCollectionViewCell
         }
+        
+        cell.anchor = anchor
+        
+        return cell
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -127,6 +136,11 @@ extension RecommendViewController : UICollectionViewDataSource {
             let headView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kCycleScrollHeaderID, for: indexPath) as! RecommendCycleScrollHeaderView
             
             headView.group = recommendVM.anchorGroups[indexPath.section]
+
+            headView.modelGroup = recommendVM.cycleModels
+            
+            print("----\(headView.modelGroup)")
+            
             return headView
         }else {
             let headView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kNormalHeaderID, for: indexPath) as! RecommendNormalHeaderView

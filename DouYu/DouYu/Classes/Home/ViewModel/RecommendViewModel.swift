@@ -12,6 +12,8 @@ class RecommendViewModel {
     //懒加载属性
     //存放分类组的数组
     lazy var anchorGroups : [AnchorGroup] = [AnchorGroup]()
+    //存放轮播图数据的数组
+    lazy var cycleModels : [CycleModel] = [CycleModel]()
     fileprivate lazy var recommendGroup : AnchorGroup = AnchorGroup()
     fileprivate lazy var prettyGroup : AnchorGroup = AnchorGroup()
     
@@ -19,6 +21,7 @@ class RecommendViewModel {
 
 extension RecommendViewModel {
 
+    //请求推荐数据
     func requestData(finishedCallback:@escaping () -> ()) {
     
         print(NSDate.getCurrentTimeInterval())
@@ -96,6 +99,24 @@ extension RecommendViewModel {
         }
         
     }
-
+    
+    //请求轮播图数据
+    func requestCycleData(finishedCallback:@escaping () -> ()) {
+    
+        let parameters = ["version" : "2.5.2.1"]
+        NetworkTools.requestData(type: .get, urlString: "http://www.douyutv.com/api/v1/slide/6", parameters: parameters) { (response) in
+            
+            guard let dataDic = response as? [String : NSObject] else { return }
+            
+            guard let dataArray = dataDic["data"] as? [[String : NSObject]] else { return }
+            
+            for dic in dataArray {
+                let cycleModel = CycleModel(dict: dic)
+                self.cycleModels.append(cycleModel)
+            }
+            
+        }
+        finishedCallback()
+    }
 
 }

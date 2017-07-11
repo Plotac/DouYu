@@ -8,31 +8,20 @@
 
 import UIKit
 
-class AppPrettyCollectionViewCell: UICollectionViewCell {
+class AppPrettyCollectionViewCell: BaseCollectionViewCell {
     
     //控件设置
-    var imgView : UIImageView = UIImageView()
-    var audienceLab : UILabel = UILabel()
-    var performerLab : UILabel = UILabel()
-    var locationLab :UILabel = UILabel()
+    var locationLab : UILabel = UILabel()
     
     
-    var anchor : AnchorModel? {
+    override var anchor : AnchorModel? {
     
         didSet {
-            guard let anchor = anchor else {
-                return
-            }
-            imgView.sd_setImage(with: URL.init(string: (anchor.vertical_src)), placeholderImage: UIImage(named:"prettycellPlaceholder"), options: .retryFailed)
-            if anchor.online < 1000000 && anchor.online >= 10000 {
-                audienceLab.text = String(format:"%.1f万",(Float(anchor.online) / 10000.0))
-            }else if anchor.online >= 1000000 {
-                audienceLab.text = "\(anchor.online / 1000000)万"
-            }else {
-                audienceLab.text = "\(anchor.online)"
-            }
-            performerLab.text = anchor.nickname
-            locationLab.text = anchor.anchor_city
+            //将属性传递给父类
+            super.anchor = anchor
+            
+            //设置属性
+            locationLab.text = anchor?.anchor_city
         }
     
     }
@@ -124,8 +113,6 @@ extension AppPrettyCollectionViewCell {
         }
         
         //位置label
-        locationLab.text = "牡丹江市"
-        let getLocationLabWidthFunc = String.ja_widthForComment(locationLab.text!)
         locationLab.font = UIFont.systemFont(ofSize: 12)
         locationLab.textColor = UIColor(r: 120, g: 120, b: 120)
         locationLab.textAlignment = .right
@@ -133,14 +120,14 @@ extension AppPrettyCollectionViewCell {
         locationLab.snp.makeConstraints { (make) in
             make.right.equalTo(imgView)
             make.centerY.equalTo(performerIcon)
-            make.size.equalTo(CGSize(width: getLocationLabWidthFunc(12,kSpacingBetweenControls * 2), height: kSpacingBetweenControls * 2))
+            make.size.equalTo(CGSize(width: 40, height: kSpacingBetweenControls * 2))
         }
         
         //位置图标
         let locationIcon = UIImageView(image: UIImage(named: "PrettyCellLocationIcon"))
         contentView.addSubview(locationIcon)
         locationIcon.snp.makeConstraints { (make) in
-            make.right.equalTo(locationLab.snp.left).offset(-5)
+            make.right.equalTo(locationLab.snp.left)
             make.centerY.equalTo(locationLab)
             make.size.equalTo(CGSize(width: 13, height: 13))
         }
