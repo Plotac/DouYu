@@ -453,7 +453,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Plo;
 				TargetAttributes = {
 					56DBAE581EF7CFAA004F98DD = {
@@ -725,6 +725,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C8DDDEB2EA10B560C9495F53 /* Pods-DouYu.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = DouYu/Info.plist;
@@ -741,6 +742,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8BBE3386A115C26DBB4EF9F3 /* Pods-DouYu.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = DouYu/Info.plist;

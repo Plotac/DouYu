@@ -114,7 +114,6 @@ extension AppCommonCollectionViewCell {
         }
         
         //imageView上的主播名
-        performerLab.text = "老实憨厚的笑笑"
         performerLab.font = UIFont.systemFont(ofSize: 10)
         performerLab.textColor = UIColor.white
         performerLab.textAlignment = .left
@@ -127,7 +126,6 @@ extension AppCommonCollectionViewCell {
 
         //主播标题
         contentView.addSubview(titleLab)
-        titleLab.text = "老陶：蠢货们啊哈哈哈哈哈哈哈哈哈哈"
         titleLab.font = UIFont.systemFont(ofSize: 12)
         titleLab.textColor = UIColor(r: 103, g: 103, b: 103)
         titleLab.snp.makeConstraints { (make) in
@@ -135,8 +133,6 @@ extension AppCommonCollectionViewCell {
             make.top.equalTo(imgView.snp.bottom).offset(5)
             make.size.equalTo(CGSize(width: cellWidth, height: 15))
         }
-        
-
     }
     
 
